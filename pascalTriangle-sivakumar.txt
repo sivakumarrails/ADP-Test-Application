@@ -1,0 +1,22 @@
+function generattePascalTriangle(numberOfLevels) {
+if(numberOfLevels){
+    let resultTriangle = [];
+    for(let i = 0; i< numberOfLevels; i++){
+         let row = [];
+        for(let j= 0; j <= i; j++){
+           
+            if(j=== 0 || i === j){
+                row.push(1);
+            } else {
+                   row.push(resultTriangle[i-1][j-1] + resultTriangle[i-1][j]);
+            }
+          
+        }
+          resultTriangle.push(row);
+    }
+    return resultTriangle
+
+}
+}
+
+console.log(generattePascalTriangle(7));
